@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.sheet = [[LYSheetController alloc] init];
     self.sheet.delegate = self;
     self.sheet.dismissHandler = ^(BOOL success){

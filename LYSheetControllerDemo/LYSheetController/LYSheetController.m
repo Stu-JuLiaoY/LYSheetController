@@ -1,6 +1,5 @@
 //
 //  LYSheetController.m
-//  NicelandCenterControl
 //
 //  Created by Ju Liaoyuan on 17/4/14.
 //  Copyright © 2017年 Leo. All rights reserved.
@@ -38,6 +37,10 @@ static CGFloat LYSheetRowHeight = 50.f;
         [self defaultConfig];
     }
     return self;
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc");
 }
 
 - (void)viewDidLoad {

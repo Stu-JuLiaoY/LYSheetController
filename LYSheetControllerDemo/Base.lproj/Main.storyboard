@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show"/>
                                 <connections>
-                                    <action selector="showSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bwa-yX-STK"/>
+                                    <action selector="showSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewc-Sw-fRY"/>
                                 </connections>
                             </button>
                         </subviews>

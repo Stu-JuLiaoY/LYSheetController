@@ -1,6 +1,5 @@
 //
 //  UIViewController+Active.m
-//  PandaeeMercApp
 //
 //  Created by JuLiaoyuan on 16/8/18.
 //  Copyright © 2016年 Spark. All rights reserved.

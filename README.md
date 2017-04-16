@@ -10,13 +10,13 @@
     // init
     LYSheetController *sheet = [[LYSheetController alloc] init];
     // or LYSheetController *sheet = [[LYSheetController alloc] initWithDataSource:datasource];
-    self.sheet.delegate = self;
+    sheet.delegate = self;
     
     // show
-    [self.sheet showSheetControllerWithAnimated:YES completionHandler:nil];
+    [sheet showSheetControllerWithAnimated:YES completionHandler:nil];
     
     // dismiss
-    [self.sheet dismissSheetControllerWithAnimated:YES completionHandler:nil];
+    [sheet dismissSheetControllerWithAnimated:YES completionHandler:nil];
     
     // action handle
     - (void)sheetController:(LYSheetController *)sheetController didSelectRowAtIndexPath:(NSInteger)indexPath;

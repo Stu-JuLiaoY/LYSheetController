@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B33811201EA33C5A009CC659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B338111F1EA33C5A009CC659 /* main.m */; };
+		B33811231EA33C5A009CC659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811221EA33C5A009CC659 /* AppDelegate.m */; };
+		B33811261EA33C5A009CC659 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811251EA33C5A009CC659 /* ViewController.m */; };
+		B33811291EA33C5A009CC659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33811271EA33C5A009CC659 /* Main.storyboard */; };
+		B338112B1EA33C5A009CC659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B338112A1EA33C5A009CC659 /* Assets.xcassets */; };
+		B338112E1EA33C5A009CC659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B338112C1EA33C5A009CC659 /* LaunchScreen.storyboard */; };
+		B33811391EA33C5A009CC659 /* LYSheetControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */; };
+		B33811441EA33C5A009CC659 /* LYSheetControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */; };
+		B338115A1EA33CB1009CC659 /* LYSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811531EA33CB1009CC659 /* LYSheetCell.m */; };
+		B338115B1EA33CB1009CC659 /* LYSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811551EA33CB1009CC659 /* LYSheetController.m */; };
+		B338115C1EA33CB1009CC659 /* LYSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811571EA33CB1009CC659 /* LYSheetModel.m */; };
+		B338115D1EA33CB1009CC659 /* LYSheetCustomDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811591EA33CB1009CC659 /* LYSheetCustomDefaultCell.m */; };
+		B33811601EA33DD2009CC659 /* UIViewController+Active.m in Sources */ = {isa = PBXBuildFile; fileRef = B338115F1EA33DD2009CC659 /* UIViewController+Active.m */; };
+		B33811631EA360D0009CC659 /* LYSheetCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811621EA360D0009CC659 /* LYSheetCustomModel.m */; };
+		B33811661EA3644C009CC659 /* blackmarble_2016_americas_composite.png in Resources */ = {isa = PBXBuildFile; fileRef = B33811641EA3644C009CC659 /* blackmarble_2016_americas_composite.png */; };
+		B338116A1EA36A1F009CC659 /* LYSheetCustomCancelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811691EA36A1F009CC659 /* LYSheetCustomCancelCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B33811351EA33C5A009CC659 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B33811131EA33C5A009CC659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B338111A1EA33C5A009CC659;
+			remoteInfo = LYSheetControllerDemo;
+		};
+		B33811401EA33C5A009CC659 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B33811131EA33C5A009CC659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B338111A1EA33C5A009CC659;
+			remoteInfo = LYSheetControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B338111B1EA33C5A009CC659 /* LYSheetControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYSheetControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B338111F1EA33C5A009CC659 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B33811211EA33C5A009CC659 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B33811221EA33C5A009CC659 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B33811241EA33C5A009CC659 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B33811251EA33C5A009CC659 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B33811281EA33C5A009CC659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B338112A1EA33C5A009CC659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B338112D1EA33C5A009CC659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B338112F1EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33811341EA33C5A009CC659 /* LYSheetControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYSheetControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSheetControllerDemoTests.m; sourceTree = "<group>"; };
+		B338113A1EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B338113F1EA33C5A009CC659 /* LYSheetControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYSheetControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSheetControllerDemoUITests.m; sourceTree = "<group>"; };
+		B33811451EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33811521EA33CB1009CC659 /* LYSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetCell.h; sourceTree = "<group>"; };
+		B33811531EA33CB1009CC659 /* LYSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetCell.m; sourceTree = "<group>"; };
+		B33811541EA33CB1009CC659 /* LYSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetController.h; sourceTree = "<group>"; };
+		B33811551EA33CB1009CC659 /* LYSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetController.m; sourceTree = "<group>"; };
+		B33811561EA33CB1009CC659 /* LYSheetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetModel.h; sourceTree = "<group>"; };
+		B33811571EA33CB1009CC659 /* LYSheetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetModel.m; sourceTree = "<group>"; };
+		B33811581EA33CB1009CC659 /* LYSheetCustomDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYSheetCustomDefaultCell.h; path = LYSheetController/LYSheetCustomDefaultCell.h; sourceTree = "<group>"; };
+		B33811591EA33CB1009CC659 /* LYSheetCustomDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYSheetCustomDefaultCell.m; path = LYSheetController/LYSheetCustomDefaultCell.m; sourceTree = "<group>"; };
+		B338115E1EA33DD2009CC659 /* UIViewController+Active.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Active.h"; sourceTree = "<group>"; };
+		B338115F1EA33DD2009CC659 /* UIViewController+Active.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Active.m"; sourceTree = "<group>"; };
+		B33811611EA360D0009CC659 /* LYSheetCustomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetCustomModel.h; sourceTree = "<group>"; };
+		B33811621EA360D0009CC659 /* LYSheetCustomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetCustomModel.m; sourceTree = "<group>"; };
+		B33811641EA3644C009CC659 /* blackmarble_2016_americas_composite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackmarble_2016_americas_composite.png; sourceTree = "<group>"; };
+		B33811681EA36A1F009CC659 /* LYSheetCustomCancelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetCustomCancelCell.h; sourceTree = "<group>"; };
+		B33811691EA36A1F009CC659 /* LYSheetCustomCancelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetCustomCancelCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B33811181EA33C5A009CC659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B33811311EA33C5A009CC659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338113C1EA33C5A009CC659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B33811121EA33C5A009CC659 = {
+			isa = PBXGroup;
+			children = (
+				B33811511EA33CB1009CC659 /* LYSheetController */,
+				B338111D1EA33C5A009CC659 /* LYSheetControllerDemo */,
+				B33811371EA33C5A009CC659 /* LYSheetControllerDemoTests */,
+				B33811421EA33C5A009CC659 /* LYSheetControllerDemoUITests */,
+				B338111C1EA33C5A009CC659 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B338111C1EA33C5A009CC659 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B338111B1EA33C5A009CC659 /* LYSheetControllerDemo.app */,
+				B33811341EA33C5A009CC659 /* LYSheetControllerDemoTests.xctest */,
+				B338113F1EA33C5A009CC659 /* LYSheetControllerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B338111D1EA33C5A009CC659 /* LYSheetControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B33811211EA33C5A009CC659 /* AppDelegate.h */,
+				B33811221EA33C5A009CC659 /* AppDelegate.m */,
+				B33811241EA33C5A009CC659 /* ViewController.h */,
+				B33811251EA33C5A009CC659 /* ViewController.m */,
+				B33811581EA33CB1009CC659 /* LYSheetCustomDefaultCell.h */,
+				B33811591EA33CB1009CC659 /* LYSheetCustomDefaultCell.m */,
+				B33811681EA36A1F009CC659 /* LYSheetCustomCancelCell.h */,
+				B33811691EA36A1F009CC659 /* LYSheetCustomCancelCell.m */,
+				B33811611EA360D0009CC659 /* LYSheetCustomModel.h */,
+				B33811621EA360D0009CC659 /* LYSheetCustomModel.m */,
+				B33811641EA3644C009CC659 /* blackmarble_2016_americas_composite.png */,
+				B33811271EA33C5A009CC659 /* Main.storyboard */,
+				B338112A1EA33C5A009CC659 /* Assets.xcassets */,
+				B338112C1EA33C5A009CC659 /* LaunchScreen.storyboard */,
+				B338112F1EA33C5A009CC659 /* Info.plist */,
+				B338111E1EA33C5A009CC659 /* Supporting Files */,
+			);
+			path = LYSheetControllerDemo;
+			sourceTree = "<group>";
+		};
+		B338111E1EA33C5A009CC659 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B338111F1EA33C5A009CC659 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B33811371EA33C5A009CC659 /* LYSheetControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */,
+				B338113A1EA33C5A009CC659 /* Info.plist */,
+			);
+			path = LYSheetControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		B33811421EA33C5A009CC659 /* LYSheetControllerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */,
+				B33811451EA33C5A009CC659 /* Info.plist */,
+			);
+			path = LYSheetControllerDemoUITests;
+			sourceTree = "<group>";
+		};
+		B33811511EA33CB1009CC659 /* LYSheetController */ = {
+			isa = PBXGroup;
+			children = (
+				B33811541EA33CB1009CC659 /* LYSheetController.h */,
+				B33811551EA33CB1009CC659 /* LYSheetController.m */,
+				B33811521EA33CB1009CC659 /* LYSheetCell.h */,
+				B33811531EA33CB1009CC659 /* LYSheetCell.m */,
+				B33811561EA33CB1009CC659 /* LYSheetModel.h */,
+				B33811571EA33CB1009CC659 /* LYSheetModel.m */,
+				B338115E1EA33DD2009CC659 /* UIViewController+Active.h */,
+				B338115F1EA33DD2009CC659 /* UIViewController+Active.m */,
+			);
+			name = LYSheetController;
+			path = LYSheetControllerDemo/LYSheetController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B338111A1EA33C5A009CC659 /* LYSheetControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B33811481EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemo" */;
+			buildPhases = (
+				B33811171EA33C5A009CC659 /* Sources */,
+				B33811181EA33C5A009CC659 /* Frameworks */,
+				B33811191EA33C5A009CC659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYSheetControllerDemo;
+			productName = LYSheetControllerDemo;
+			productReference = B338111B1EA33C5A009CC659 /* LYSheetControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B33811331EA33C5A009CC659 /* LYSheetControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B338114B1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoTests" */;
+			buildPhases = (
+				B33811301EA33C5A009CC659 /* Sources */,
+				B33811311EA33C5A009CC659 /* Frameworks */,
+				B33811321EA33C5A009CC659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B33811361EA33C5A009CC659 /* PBXTargetDependency */,
+			);
+			name = LYSheetControllerDemoTests;
+			productName = LYSheetControllerDemoTests;
+			productReference = B33811341EA33C5A009CC659 /* LYSheetControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B338113E1EA33C5A009CC659 /* LYSheetControllerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B338114E1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoUITests" */;
+			buildPhases = (
+				B338113B1EA33C5A009CC659 /* Sources */,
+				B338113C1EA33C5A009CC659 /* Frameworks */,
+				B338113D1EA33C5A009CC659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B33811411EA33C5A009CC659 /* PBXTargetDependency */,
+			);
+			name = LYSheetControllerDemoUITests;
+			productName = LYSheetControllerDemoUITests;
+			productReference = B338113F1EA33C5A009CC659 /* LYSheetControllerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B33811131EA33C5A009CC659 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Leo;
+				TargetAttributes = {
+					B338111A1EA33C5A009CC659 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 8H42Q3R4VZ;
+						ProvisioningStyle = Automatic;
+					};
+					B33811331EA33C5A009CC659 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B338111A1EA33C5A009CC659;
+					};
+					B338113E1EA33C5A009CC659 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B338111A1EA33C5A009CC659;
+					};
+				};
+			};
+			buildConfigurationList = B33811161EA33C5A009CC659 /* Build configuration list for PBXProject "LYSheetControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B33811121EA33C5A009CC659;
+			productRefGroup = B338111C1EA33C5A009CC659 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B338111A1EA33C5A009CC659 /* LYSheetControllerDemo */,
+				B33811331EA33C5A009CC659 /* LYSheetControllerDemoTests */,
+				B338113E1EA33C5A009CC659 /* LYSheetControllerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B33811191EA33C5A009CC659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B33811661EA3644C009CC659 /* blackmarble_2016_americas_composite.png in Resources */,
+				B338112E1EA33C5A009CC659 /* LaunchScreen.storyboard in Resources */,
+				B338112B1EA33C5A009CC659 /* Assets.xcassets in Resources */,
+				B33811291EA33C5A009CC659 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B33811321EA33C5A009CC659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338113D1EA33C5A009CC659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B33811171EA33C5A009CC659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B33811601EA33DD2009CC659 /* UIViewController+Active.m in Sources */,
+				B33811631EA360D0009CC659 /* LYSheetCustomModel.m in Sources */,
+				B33811261EA33C5A009CC659 /* ViewController.m in Sources */,
+				B33811231EA33C5A009CC659 /* AppDelegate.m in Sources */,
+				B338115B1EA33CB1009CC659 /* LYSheetController.m in Sources */,
+				B338116A1EA36A1F009CC659 /* LYSheetCustomCancelCell.m in Sources */,
+				B338115C1EA33CB1009CC659 /* LYSheetModel.m in Sources */,
+				B33811201EA33C5A009CC659 /* main.m in Sources */,
+				B338115A1EA33CB1009CC659 /* LYSheetCell.m in Sources */,
+				B338115D1EA33CB1009CC659 /* LYSheetCustomDefaultCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B33811301EA33C5A009CC659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B33811391EA33C5A009CC659 /* LYSheetControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B338113B1EA33C5A009CC659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B33811441EA33C5A009CC659 /* LYSheetControllerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B33811361EA33C5A009CC659 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B338111A1EA33C5A009CC659 /* LYSheetControllerDemo */;
+			targetProxy = B33811351EA33C5A009CC659 /* PBXContainerItemProxy */;
+		};
+		B33811411EA33C5A009CC659 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B338111A1EA33C5A009CC659 /* LYSheetControllerDemo */;
+			targetProxy = B33811401EA33C5A009CC659 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B33811271EA33C5A009CC659 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B33811281EA33C5A009CC659 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B338112C1EA33C5A009CC659 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B338112D1EA33C5A009CC659 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B33811461EA33C5A009CC659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B33811471EA33C5A009CC659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B33811491EA33C5A009CC659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				INFOPLIST_FILE = LYSheetControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B338114A1EA33C5A009CC659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				INFOPLIST_FILE = LYSheetControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B338114C1EA33C5A009CC659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LYSheetControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYSheetControllerDemo.app/LYSheetControllerDemo";
+			};
+			name = Debug;
+		};
+		B338114D1EA33C5A009CC659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LYSheetControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYSheetControllerDemo.app/LYSheetControllerDemo";
+			};
+			name = Release;
+		};
+		B338114F1EA33C5A009CC659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LYSheetControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LYSheetControllerDemo;
+			};
+			name = Debug;
+		};
+		B33811501EA33C5A009CC659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LYSheetControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.www.LYSheetControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LYSheetControllerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B33811161EA33C5A009CC659 /* Build configuration list for PBXProject "LYSheetControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B33811461EA33C5A009CC659 /* Debug */,
+				B33811471EA33C5A009CC659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B33811481EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B33811491EA33C5A009CC659 /* Debug */,
+				B338114A1EA33C5A009CC659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B338114B1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B338114C1EA33C5A009CC659 /* Debug */,
+				B338114D1EA33C5A009CC659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B338114E1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B338114F1EA33C5A009CC659 /* Debug */,
+				B33811501EA33C5A009CC659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B33811131EA33C5A009CC659 /* Project object */;
+}

@@ -1,7 +1,7 @@
 # LYSheetController
 > A simple, powerful pop-up menu view
 # 设计思路
-设计仿照了系统的 `UITableView`,其实内部的实现也是一个使用了系统的`UITableView`。依于次，我们可以使用`- registSheetControllerCell:forStyle:`大大提高扩展性.
+设计仿照了系统的 `UITableView`,其实内部的实现也是一个使用了系统的`UITableView`。依于此，我们可以使用`- registSheetControllerCell:forStyle:`大大提高扩展性.
 
 # 使用 Usage
 由于仿照了`UITableView`的设计思路，所以，你可以像使用`UITableView`一样，使用`LYShetController`

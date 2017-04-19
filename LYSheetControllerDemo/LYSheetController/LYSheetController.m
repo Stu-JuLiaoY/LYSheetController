@@ -6,17 +6,14 @@
 //
 
 #import "LYSheetController.h"
-#import "LYSheetCell.h"
-#import "LYSheetModel.h"
-#import "UIViewController+Active.h"
-
-static NSString * const LYSheetControllerStyleDefault = @"LYSheetControllerStyleDefault";
-static NSString * const LYSheetControllerStyleCancel = @"LYSheetControllerStyleCancel";
-static const NSTimeInterval animationDuration = 0.2;
+#import "UIViewController+LYActive.h"
 
 #define LYScreenWidth         [[UIScreen mainScreen]bounds].size.width
 #define LYScreenHeight        [[UIScreen mainScreen] bounds].size.height
 
+static NSString * const LYSheetControllerStyleDefault = @"LYSheetControllerStyleDefault";
+static NSString * const LYSheetControllerStyleCancel = @"LYSheetControllerStyleCancel";
+static const NSTimeInterval animationDuration = 0.2;
 static CGFloat LYSheetRowHeight = 50.f;
 
 @interface LYSheetController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
@@ -243,7 +240,6 @@ static CGFloat LYSheetRowHeight = 50.f;
     }
     return _tableView;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

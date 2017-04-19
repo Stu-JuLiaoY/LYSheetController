@@ -19,7 +19,7 @@
 		B338115B1EA33CB1009CC659 /* LYSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811551EA33CB1009CC659 /* LYSheetController.m */; };
 		B338115C1EA33CB1009CC659 /* LYSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811571EA33CB1009CC659 /* LYSheetModel.m */; };
 		B338115D1EA33CB1009CC659 /* LYSheetCustomDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811591EA33CB1009CC659 /* LYSheetCustomDefaultCell.m */; };
-		B33811601EA33DD2009CC659 /* UIViewController+Active.m in Sources */ = {isa = PBXBuildFile; fileRef = B338115F1EA33DD2009CC659 /* UIViewController+Active.m */; };
+		B33811601EA33DD2009CC659 /* UIViewController+LYActive.m in Sources */ = {isa = PBXBuildFile; fileRef = B338115F1EA33DD2009CC659 /* UIViewController+LYActive.m */; };
 		B33811631EA360D0009CC659 /* LYSheetCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811621EA360D0009CC659 /* LYSheetCustomModel.m */; };
 		B33811661EA3644C009CC659 /* blackmarble_2016_americas_composite.png in Resources */ = {isa = PBXBuildFile; fileRef = B33811641EA3644C009CC659 /* blackmarble_2016_americas_composite.png */; };
 		B338116A1EA36A1F009CC659 /* LYSheetCustomCancelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811691EA36A1F009CC659 /* LYSheetCustomCancelCell.m */; };
@@ -67,8 +67,8 @@
 		B33811571EA33CB1009CC659 /* LYSheetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetModel.m; sourceTree = "<group>"; };
 		B33811581EA33CB1009CC659 /* LYSheetCustomDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYSheetCustomDefaultCell.h; path = LYSheetController/LYSheetCustomDefaultCell.h; sourceTree = "<group>"; };
 		B33811591EA33CB1009CC659 /* LYSheetCustomDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYSheetCustomDefaultCell.m; path = LYSheetController/LYSheetCustomDefaultCell.m; sourceTree = "<group>"; };
-		B338115E1EA33DD2009CC659 /* UIViewController+Active.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Active.h"; sourceTree = "<group>"; };
-		B338115F1EA33DD2009CC659 /* UIViewController+Active.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Active.m"; sourceTree = "<group>"; };
+		B338115E1EA33DD2009CC659 /* UIViewController+LYActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LYActive.h"; sourceTree = "<group>"; };
+		B338115F1EA33DD2009CC659 /* UIViewController+LYActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LYActive.m"; sourceTree = "<group>"; };
 		B33811611EA360D0009CC659 /* LYSheetCustomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetCustomModel.h; sourceTree = "<group>"; };
 		B33811621EA360D0009CC659 /* LYSheetCustomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetCustomModel.m; sourceTree = "<group>"; };
 		B33811641EA3644C009CC659 /* blackmarble_2016_americas_composite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackmarble_2016_americas_composite.png; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 				B33811531EA33CB1009CC659 /* LYSheetCell.m */,
 				B33811561EA33CB1009CC659 /* LYSheetModel.h */,
 				B33811571EA33CB1009CC659 /* LYSheetModel.m */,
-				B338115E1EA33DD2009CC659 /* UIViewController+Active.h */,
-				B338115F1EA33DD2009CC659 /* UIViewController+Active.m */,
+				B338115E1EA33DD2009CC659 /* UIViewController+LYActive.h */,
+				B338115F1EA33DD2009CC659 /* UIViewController+LYActive.m */,
 			);
 			name = LYSheetController;
 			path = LYSheetControllerDemo/LYSheetController;
@@ -322,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33811601EA33DD2009CC659 /* UIViewController+Active.m in Sources */,
+				B33811601EA33DD2009CC659 /* UIViewController+LYActive.m in Sources */,
 				B33811631EA360D0009CC659 /* LYSheetCustomModel.m in Sources */,
 				B33811261EA33C5A009CC659 /* ViewController.m in Sources */,
 				B33811231EA33C5A009CC659 /* AppDelegate.m in Sources */,
@@ -563,6 +563,7 @@
 				B338114A1EA33C5A009CC659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B338114B1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +572,7 @@
 				B338114D1EA33C5A009CC659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B338114E1EA33C5A009CC659 /* Build configuration list for PBXNativeTarget "LYSheetControllerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +581,7 @@
 				B33811501EA33C5A009CC659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

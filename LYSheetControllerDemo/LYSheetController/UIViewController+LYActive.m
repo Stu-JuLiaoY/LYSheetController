@@ -5,9 +5,9 @@
 //  Copyright © 2016年 Spark. All rights reserved.
 //
 
-#import "UIViewController+Active.h"
+#import "UIViewController+LYActive.h"
 
-@implementation UIViewController (Active)
+@implementation UIViewController (LYActive)
 
 + (UIViewController *)activeViewController {
     UIViewController *viewController = [[UIViewController alloc] init];

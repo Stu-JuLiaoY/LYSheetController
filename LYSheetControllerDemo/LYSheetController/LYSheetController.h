@@ -7,11 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LYSheetModel.h"
+#import "LYSheetCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class LYSheetController;
-@class LYSheetCell;
+
 
 @protocol LYSheetControllerDelegate <NSObject>
 

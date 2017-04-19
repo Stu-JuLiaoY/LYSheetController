@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (Active)
+@interface UIViewController (LYActive)
 
 + (UIViewController *)activeViewController;
 

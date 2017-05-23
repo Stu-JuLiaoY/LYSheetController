@@ -16,8 +16,6 @@
 		B33811291EA33C5A009CC659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B33811271EA33C5A009CC659 /* Main.storyboard */; };
 		B338112B1EA33C5A009CC659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B338112A1EA33C5A009CC659 /* Assets.xcassets */; };
 		B338112E1EA33C5A009CC659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B338112C1EA33C5A009CC659 /* LaunchScreen.storyboard */; };
-		B33811391EA33C5A009CC659 /* LYSheetControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */; };
-		B33811441EA33C5A009CC659 /* LYSheetControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */; };
 		B338115B1EA33CB1009CC659 /* LYSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811551EA33CB1009CC659 /* LYSheetController.m */; };
 		B33811601EA33DD2009CC659 /* UIViewController+LYActive.m in Sources */ = {isa = PBXBuildFile; fileRef = B338115F1EA33DD2009CC659 /* UIViewController+LYActive.m */; };
 		B33811631EA360D0009CC659 /* LYSheetCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B33811621EA360D0009CC659 /* LYSheetCustomModel.m */; };
@@ -59,11 +57,7 @@
 		B338112D1EA33C5A009CC659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B338112F1EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33811341EA33C5A009CC659 /* LYSheetControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYSheetControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSheetControllerDemoTests.m; sourceTree = "<group>"; };
-		B338113A1EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B338113F1EA33C5A009CC659 /* LYSheetControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYSheetControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSheetControllerDemoUITests.m; sourceTree = "<group>"; };
-		B33811451EA33C5A009CC659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33811541EA33CB1009CC659 /* LYSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSheetController.h; sourceTree = "<group>"; };
 		B33811551EA33CB1009CC659 /* LYSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSheetController.m; sourceTree = "<group>"; };
 		B338115E1EA33DD2009CC659 /* UIViewController+LYActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LYActive.h"; sourceTree = "<group>"; };
@@ -102,8 +96,6 @@
 			children = (
 				B33811511EA33CB1009CC659 /* LYSheetController */,
 				B338111D1EA33C5A009CC659 /* LYSheetControllerDemo */,
-				B33811371EA33C5A009CC659 /* LYSheetControllerDemoTests */,
-				B33811421EA33C5A009CC659 /* LYSheetControllerDemoUITests */,
 				B338111C1EA33C5A009CC659 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -147,24 +139,6 @@
 				B338111F1EA33C5A009CC659 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B33811371EA33C5A009CC659 /* LYSheetControllerDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				B33811381EA33C5A009CC659 /* LYSheetControllerDemoTests.m */,
-				B338113A1EA33C5A009CC659 /* Info.plist */,
-			);
-			path = LYSheetControllerDemoTests;
-			sourceTree = "<group>";
-		};
-		B33811421EA33C5A009CC659 /* LYSheetControllerDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B33811431EA33C5A009CC659 /* LYSheetControllerDemoUITests.m */,
-				B33811451EA33C5A009CC659 /* Info.plist */,
-			);
-			path = LYSheetControllerDemoUITests;
 			sourceTree = "<group>";
 		};
 		B33811511EA33CB1009CC659 /* LYSheetController */ = {
@@ -331,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33811391EA33C5A009CC659 /* LYSheetControllerDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33811441EA33C5A009CC659 /* LYSheetControllerDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

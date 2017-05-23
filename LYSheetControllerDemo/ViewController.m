@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "LYSheetController.h"
-#import "LYSheetCustomDefaultCell.h"
-#import "LYSheetCustomCancelCell.h"
+#import "LYSheetMenu.h"
 #import "LYSheetCustomModel.h"
+#import "LYSheetCustomTextCell.h"
+#import "LYSheetCustomImageCell.h"
 
-#define SWITCH 1
+#define TEXT_ONLY 0
 
 @interface ViewController ()<LYSheetControllerDelegate>
 
@@ -32,38 +32,55 @@
     };
     self.sheet.dismissWhenSelected = YES;
     self.sheet.rowHeight = 50;
-#if SWITCH
-    // 普通的用法
-    NSArray *models = @[[LYSheetModel initWithSheetTitle:@"sheet 1" selector:@selector(sheetAction1:)],
-                        [LYSheetModel initWithSheetTitle:@"sheet 2" selector:@selector(sheetAction2:)],
-                        [LYSheetModel initWithSheetTitle:@"sheet 3" selector:@selector(sheetAction3)]];
+    
+#if TEXT_ONLY
+    // text only
+    NSArray *models = @[[[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 1" selector:@selector(sheetAction1:)],
+                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 2" selector:@selector(sheetAction1:)],
+                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 3" selector:@selector(sheetAction1:)]];
     self.sheet.dataSource = models;
+    for (LYSheetCustomModel *model in self.sheet.dataSource) {
+        NSLog(@"%@,%d",model.sheetTitle,(int)model.sheetStyle);
+    }
+    [self.sheet registSheetControllerCell:[LYSheetCustomCell class] forStyle:kLYSheetStyleDefault];
+    [self.sheet registSheetControllerCell:[LYSheetCustomCell class]  forStyle:kLYSheetStyleCancel];
 #else 
-    // 自定义 cell、 model
+    // text - image
+    
     LYSheetCustomModel *model1 = [LYSheetCustomModel new];
     model1.sheetTitle = @"sheet 1";
-    model1.image = [UIImage imageNamed:@"blackmarble_2016_americas_composite"];
-    model1.style = kLYSheetStyleDefault;
+    model1.sheetImage = [UIImage imageNamed:@"15648957.jpeg"];
+    model1.sheetStyle = LYSheetStyleCancel;
     
     LYSheetCustomModel *model2 = [LYSheetCustomModel new];
     model2.sheetTitle = @"sheet 2";
-    model2.image = [UIImage imageNamed:@"blackmarble_2016_americas_composite"];
-    model2.style = kLYSheetStyleCancel;
+    model2.sheetImage = [UIImage imageNamed:@"15648957.jpeg"];
+    model2.sheetStyle = LYSheetStyleDefault;
+    
     
     self.sheet.dataSource = @[model1,model2];
-    [self.sheet registSheetControllerCell:[LYSheetCustomDefaultCell new] forStyle:kLYSheetStyleDefault];
-    [self.sheet registSheetControllerCell:[LYSheetCustomCancelCell new] forStyle:kLYSheetStyleCancel];
+    [self.sheet registSheetControllerCell:[LYSheetCustomImageCell class] forStyle:LYSheetStyleDefault];
+    [self.sheet registSheetControllerCell:[LYSheetCustomImageCell class] forStyle:LYSheetStyleCancel];
 #endif
 }
 
+- (CGFloat)headerHeightForSheetContoller:(LYSheetController *)sheetController {
+    return 40;
+}
+
+- (UIView *)headerViewForSheetContoller:(LYSheetController *)sheetController {
+    UILabel *label = [UILabel new];
+    label.text = @"this is a header";
+    label.textColor = [UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+    label.font = [UIFont systemFontOfSize:14.f];
+    return label;
+}
+
 - (void)sheetController:(LYSheetController *)sheetController didSelectRowAtIndexPath:(NSInteger)indexPath {
-#if SWITCH
-    LYSheetModel *model = sheetController.dataSource[indexPath];
-    [self performSelector:model.sheetAction withObject:model.sheetTitle afterDelay:0.f];
-#else
-    [self showAlert:[NSString stringWithFormat:@"%d",(int)indexPath]];
-#endif
-    
+
+    [self showAlert:[NSString stringWithFormat:@"indexPath row is %d",(int)indexPath]];
 }
 
 - (void)sheetAction1:(NSString *)title {
@@ -75,15 +92,12 @@
 }
 
 - (void)sheetAction3 {
-    NSArray *models = @[[LYSheetModel initWithSheetTitle:@"sheet 1 new" selector:@selector(sheetAction1:)],
-                        [LYSheetModel initWithSheetTitle:@"sheet 2 new " selector:@selector(sheetAction2:)]];
-    self.sheet.dataSource = models;
-    [self.sheet reloadSheet];
+    [self.sheet dismissSheetControllerWithAnimated:YES completionHandler:nil];
 }
 
 - (void)showAlert:(NSString *)alertTitle {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:alertTitle preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:alertTitle preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
     
 }

@@ -8,7 +8,7 @@
 #import "LYSheetController.h"
 #import "UIViewController+LYActive.h"
 
-#define LYScreenWidth         [[UIScreen mainScreen]bounds].size.width
+#define LYScreenWidth         [[UIScreen mainScreen] bounds].size.width
 #define LYScreenHeight        [[UIScreen mainScreen] bounds].size.height
 
 static NSString * const LYSheetControllerStyleDefault = @"LYSheetControllerStyleDefault";
@@ -36,10 +36,6 @@ static CGFloat LYSheetRowHeight = 50.f;
     return self;
 }
 
-- (void)dealloc {
-    NSLog(@"dealloc");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -62,11 +58,14 @@ static CGFloat LYSheetRowHeight = 50.f;
     }
 }
 
-/// 初始化默认值
+#pragma mark - private
+#pragma mark
+
+/// default config
 - (void)defaultConfig {
     self.presenting = NO;
-    self.scrollEnableAuto = YES;
     self.gestureEnable = YES;
+    self.scrollEnableAuto = YES;
     self.dismissWhenSelected = YES;
     self.rowHeight = LYSheetRowHeight;
     self.maxSheetHeight = LYScreenHeight * 2 / 3;
@@ -74,21 +73,37 @@ static CGFloat LYSheetRowHeight = 50.f;
     self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
 }
 
+- (void)tableViewScrollEnable {
+    if (!self.scrollEnableAuto) {
+        self.tableView.scrollEnabled = self.scrollEnable;
+        return;
+    }
+    if ([self tableViewHeight] > self.maxSheetHeight) {
+        self.tableView.scrollEnabled = YES;
+    } else {
+        self.tableView.scrollEnabled = NO;
+    }
+}
+
+- (CGFloat)tableViewHeight {
+    return self.dataSource.count * self.rowHeight + [self tableView:self.tableView heightForHeaderInSection:0];
+}
+
 #pragma mark - public
 #pragma mark
-- (instancetype)initWithDataSource:(NSArray<__kindof LYSheetModel *> *)dataSource {
+- (instancetype)initWithDataSource:(NSArray *)dataSource {
     self.dataSource = dataSource;
     return [self init];
 }
 
-- (void)registSheetControllerCell:(__kindof LYSheetCell *)cell forStyle:(LYSheetStyle)style {
-    if (style == kLYSheetStyleDefault) {
-        [self.tableView registerClass:[cell class] forCellReuseIdentifier:LYSheetControllerStyleDefault];
-    } else if (style == kLYSheetStyleCancel) {
-        [self.tableView registerClass:[cell class] forCellReuseIdentifier:LYSheetControllerStyleCancel];
-    } else if (style == (kLYSheetStyleCancel | kLYSheetStyleDefault)) {
-        [self.tableView registerClass:[cell class] forCellReuseIdentifier:LYSheetControllerStyleDefault];
-        [self.tableView registerClass:[cell class] forCellReuseIdentifier:LYSheetControllerStyleCancel];
+- (void)registSheetControllerCell:(Class<LYSheetCell>)cell forStyle:(LYSheetStyle)style {
+    if (style == LYSheetStyleDefault) {
+        [self.tableView registerClass:cell forCellReuseIdentifier:LYSheetControllerStyleDefault];
+    } else if (style == LYSheetStyleCancel) {
+        [self.tableView registerClass:cell forCellReuseIdentifier:LYSheetControllerStyleCancel];
+    } else if (style == (LYSheetStyleCancel | LYSheetStyleDefault)) {
+        [self.tableView registerClass:cell forCellReuseIdentifier:LYSheetControllerStyleDefault];
+        [self.tableView registerClass:cell forCellReuseIdentifier:LYSheetControllerStyleCancel];
     }
 }
 
@@ -97,16 +112,17 @@ static CGFloat LYSheetRowHeight = 50.f;
 }
 
 - (void)showSheetControllerWithAnimated:(BOOL)animated completionHandler:(void (^ _Nullable)(BOOL))completionHandler {
-    if (self.isPresenting) return;
-    UIViewController *active = [UIViewController activeViewController];
+    if (self.isPresenting) return;  // if current sheet view is showing, do nothing.
+    [self tableViewScrollEnable];   // Determine whether the tableView can scroll
+    UIViewController *active = [UIViewController activeViewController]; // Get the top of the navigation stack
     if (active && [active isKindOfClass:[UIViewController class]]) {
-        [active presentViewController:self animated:NO completion:^{
+        [active presentViewController:self animated:NO completion:^{    // cancel present animation.
             if (animated) {
-                [UIView animateWithDuration:animationDuration animations:^{
-                    self.tableView.frame = CGRectMake(0, LYScreenHeight - MIN(self.maxSheetHeight, self.dataSource.count * self.rowHeight), LYScreenWidth, MIN(self.maxSheetHeight, self.dataSource.count * self.rowHeight));
+                [UIView animateWithDuration:animationDuration animations:^{  // add tableview animation.
+                    self.tableView.frame = CGRectMake(0, LYScreenHeight - MIN(self.maxSheetHeight, [self tableViewHeight]), LYScreenWidth, MIN(self.maxSheetHeight, [self tableViewHeight]));
                 }];
             } else {
-                self.tableView.frame = CGRectMake(0, LYScreenHeight - MIN(self.maxSheetHeight, self.dataSource.count * self.rowHeight), LYScreenWidth, MIN(self.maxSheetHeight, self.dataSource.count * self.rowHeight));
+                self.tableView.frame = CGRectMake(0, LYScreenHeight - MIN(self.maxSheetHeight, [self tableViewHeight]), LYScreenWidth, MIN(self.maxSheetHeight, [self tableViewHeight]));
             }
             !completionHandler ? : completionHandler(YES);
         }];
@@ -121,12 +137,13 @@ static CGFloat LYSheetRowHeight = 50.f;
         return;
     }
     [UIView animateWithDuration:animationDuration animations:^{
-        self.tableView.frame = CGRectMake(0, LYScreenHeight, LYScreenWidth, MIN(self.maxSheetHeight, self.dataSource.count * self.rowHeight));
+        self.tableView.frame = CGRectMake(0, LYScreenHeight, LYScreenWidth, MIN(self.maxSheetHeight, [self tableViewHeight]));
     } completion:^(BOOL finished) {
         [self dismissViewControllerAnimated:NO completion:nil];
         !completionHandler ? : completionHandler(finished);
     }];
 }
+
 
 #pragma mark - custom
 #pragma mark
@@ -141,25 +158,22 @@ static CGFloat LYSheetRowHeight = 50.f;
     self.tableView.backgroundColor = sheetBackgroundColor;
 }
 
-- (void)setDataSource:(NSArray<__kindof LYSheetModel *> *)dataSource {
+- (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
     [self.tableView reloadData];
 }
 
 - (void)setScrollEnable:(BOOL)scrollEnable {
     _scrollEnable = scrollEnable;
-    self.tableView.scrollEnabled = scrollEnable;
+    [self tableViewScrollEnable];
 }
 
 - (void)setScrollEnableAuto:(BOOL)scrollEnableAuto {
     _scrollEnableAuto = scrollEnableAuto;
-    if (!scrollEnableAuto) return;
-    if (self.dataSource.count * self.rowHeight > self.maxSheetHeight) {
-        self.tableView.scrollEnabled = YES;
-    } else {
-        self.tableView.scrollEnabled = NO;
-    }
+    [self tableViewScrollEnable];
 }
+
+
 
 #pragma mark - delegate && datasource
 #pragma mark
@@ -173,16 +187,19 @@ static CGFloat LYSheetRowHeight = 50.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LYSheetCell *cell = nil;
-    LYSheetModel *model = self.dataSource[indexPath.row];
-    NSAssert(model.style, @"必须要指定 cell 的 style");
-    if (model.style == kLYSheetStyleDefault) {
+    UITableViewCell<LYSheetCell> *cell = nil;
+    id<LYSheetModel> model = self.dataSource[indexPath.row];
+    NSAssert(model.sheetStyle, @"You must specify a type");
+    if (model.sheetStyle == LYSheetStyleDefault) {
         cell = [tableView dequeueReusableCellWithIdentifier:LYSheetControllerStyleDefault forIndexPath:indexPath];
     }
-    if (model.style == kLYSheetStyleCancel) {
+    if (model.sheetStyle == LYSheetStyleCancel) {
         cell = [tableView dequeueReusableCellWithIdentifier:LYSheetControllerStyleCancel forIndexPath:indexPath];
     }
-    [cell bindModel:model];
+
+    if ([cell respondsToSelector:@selector(bindModel:)]) {
+        [cell bindModel:model];
+    }
     return cell;
 }
 
@@ -200,6 +217,7 @@ static CGFloat LYSheetRowHeight = 50.f;
     }
 }
 
+/// full screen.
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -215,14 +233,30 @@ static CGFloat LYSheetRowHeight = 50.f;
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(headerHeightForSheetContoller:)]) {
+        return [self.delegate headerHeightForSheetContoller:self];
+    }
+    return CGFLOAT_MIN;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(headerViewForSheetContoller:)]) {
+        return [self.delegate headerViewForSheetContoller:self];
+    }
+    return nil;
+}
+
 - (void)tapGestureAction {
     if (!self.isGestureEnable) return;
     [self dismissSheetControllerWithAnimated:YES completionHandler:nil];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if ([touch.view isKindOfClass:NSClassFromString(@"UITableViewCellContentView")]) {
-        return NO;
+    // if touch point location in tableview , not response tap gesture.
+    CGPoint location = [touch locationInView:self.tableView];
+    if (CGRectContainsPoint(self.tableView.bounds, location)) {
+        return  NO;
     }
     return YES;
 }
@@ -231,11 +265,9 @@ static CGFloat LYSheetRowHeight = 50.f;
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, LYScreenHeight, LYScreenWidth, MIN(LYScreenHeight * 2 / 3, self.dataSource.count * LYSheetRowHeight)) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, LYScreenHeight, LYScreenWidth, MIN(LYScreenHeight * 2 / 3, 0)) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[LYSheetCell class] forCellReuseIdentifier:LYSheetControllerStyleDefault];
-        [_tableView registerClass:[LYSheetCell class] forCellReuseIdentifier:LYSheetControllerStyleCancel];
         [self.view addSubview:_tableView];
     }
     return _tableView;

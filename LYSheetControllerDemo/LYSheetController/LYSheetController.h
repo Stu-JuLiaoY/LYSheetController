@@ -6,19 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LYSheetModel.h"
-#import "LYSheetCell.h"
+#import "LYSheetProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LYSheetController;
-
-
-@protocol LYSheetControllerDelegate <NSObject>
-
-- (void)sheetController:(LYSheetController *)sheetController didSelectRowAtIndexPath:(NSInteger)indexPath;
-
-@end
+typedef NS_ENUM(NSInteger, LYSheetControllerStyle) {
+    LYSheetControllerStylePlain,
+    LYSheetControllerStyleGroup
+};
 
 @interface LYSheetController : UIViewController
 /**
@@ -31,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  sheet controller data source
  */
-@property (nonatomic, copy, nullable) NSArray<__kindof LYSheetModel *> *dataSource;
+@property (nonatomic, copy, nullable) NSArray *dataSource;
 
 /**
  separator color
@@ -44,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *sheetBackgroundColor;
 
 /**
- tap view dismiss. default is YES, if YES, - dismissSheetController: method `animated` always is YES whatever you set animated YES or NO.
+ tap background view(not sheet view) dismiss. default is YES, if YES, - dismissSheetController: method `animated` always is YES whatever you set animated YES or NO.
  */
 @property (nonatomic, assign, getter=isGestureEnable) BOOL gestureEnable;
 
@@ -70,32 +65,33 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isDismissWhenSelected) BOOL dismissWhenSelected;
 
 /**
- 当 dismissWhenSelected 为 YES 时，选择某个 cell 后，sheet 消失后的回调。
+ when dismissWhenSelected is YES ， callback after selected cell。
  */
 @property (nonatomic, copy) void(^dismissHandler)(BOOL);
-/**
- 初始化方式
 
- @param dataSource 数据源
+/**
+ initialization
+
+ @param dataSource datasource
  @return instance object
  */
-- (instancetype)initWithDataSource:(NSArray<__kindof LYSheetModel *> * _Nullable)dataSource;
+- (instancetype)initWithDataSource:(NSArray * _Nullable)dataSource;
 
 /**
- 刷新 sheet
+ reload sheet
  */
 - (void)reloadSheet;
 
 /**
- 注册 cell
- default is LYSheetCell, subclass LYSheetCell to custom.
- @param cell 要注册的 cell
+ regist cell
+ default is LYSheetCell, inherit `LYSheetCell` protocol to custom.
+ @param cell custom cell
  @param style cell's style
  */
-- (void)registSheetControllerCell:(__kindof LYSheetCell *)cell forStyle:(LYSheetStyle)style;
+- (void)registSheetControllerCell:(Class<LYSheetCell>)cell forStyle:(LYSheetStyle)style;
 
 /**
-  展示 sheet
+  show sheet
 
  @param animated animated
  @param completionHandler completionHandler
@@ -103,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showSheetControllerWithAnimated:(BOOL)animated completionHandler:(void(^ __nullable)(BOOL success))completionHandler;
 
 /**
- 移除 sheet
+ remove sheet
 
  @param animated animated
  @param completionHandler completionHandler

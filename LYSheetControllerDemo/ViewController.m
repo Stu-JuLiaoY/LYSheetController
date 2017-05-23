@@ -12,7 +12,7 @@
 #import "LYSheetCustomTextCell.h"
 #import "LYSheetCustomImageCell.h"
 
-#define TEXT_ONLY 0
+#define TEXT_ONLY 1
 
 @interface ViewController ()<LYSheetControllerDelegate>
 
@@ -35,15 +35,15 @@
     
 #if TEXT_ONLY
     // text only
-    NSArray *models = @[[[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 1" selector:@selector(sheetAction1:)],
-                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 2" selector:@selector(sheetAction1:)],
-                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 3" selector:@selector(sheetAction1:)]];
+    NSArray *models = @[[[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 1" selector:@selector(sheetAction1:) style:LYSheetStyleDefault],
+                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 2" selector:@selector(sheetAction1:) style:LYSheetStyleDefault],
+                        [[LYSheetCustomModel alloc] initWithSheetTitle:@"sheet 3" selector:@selector(sheetAction1:) style:LYSheetStyleCancel]];
     self.sheet.dataSource = models;
     for (LYSheetCustomModel *model in self.sheet.dataSource) {
         NSLog(@"%@,%d",model.sheetTitle,(int)model.sheetStyle);
     }
-    [self.sheet registSheetControllerCell:[LYSheetCustomCell class] forStyle:kLYSheetStyleDefault];
-    [self.sheet registSheetControllerCell:[LYSheetCustomCell class]  forStyle:kLYSheetStyleCancel];
+    [self.sheet registSheetControllerCell:[LYSheetCustomTextCell class] forStyle:LYSheetStyleDefault];
+    [self.sheet registSheetControllerCell:[LYSheetCustomTextCell class]  forStyle:LYSheetStyleCancel];
 #else 
     // text - image
     

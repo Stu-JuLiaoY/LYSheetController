@@ -15,11 +15,12 @@
 @synthesize sheetStyle = _sheetStyle;
 @synthesize sheetImage = _sheetImage;
 
-- (instancetype)initWithSheetTitle:(NSString *)aTitle selector:(SEL)aSel {
+- (instancetype)initWithSheetTitle:(NSString *)aTitle selector:(SEL)aSel style:(LYSheetStyle)aStyle{
     self = [super init];
     if (self) {
         self.sheetTitle = aTitle;
         self.sheetAction = aSel;
+        self.sheetStyle = aStyle;
     }
     return self;
 }

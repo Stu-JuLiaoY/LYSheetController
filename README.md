@@ -1,6 +1,5 @@
-# LYSheetController
+# LYSheetController ![](https://img.shields.io/badge/version-0.0.2-blue.svg)
 > A simple, powerful pop-up menu view
-![](https://img.shields.io/badge/version-0.0.2-blue.svg)
 # 设计思路
 设计仿照了系统的 `UITableView`,其实内部的实现也是一个使用了系统的`UITableView`。依于此，我们可以使用`- registSheetControllerCell:forStyle:`大大提高扩展性.
 

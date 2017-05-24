@@ -28,6 +28,11 @@
 
 具体可以参考仓库中的 Demo。
 
+# TODO
+~~把继承子类改为面向协议~~
+~~支持头部视图~~
+支持横屏
+
 # License
 
 `LYSheetController` is released under a MIT License. See LICENSE file for details.
